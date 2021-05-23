@@ -16,6 +16,7 @@ class CompanyJobsController extends Controller
             'gender' => 'required',
 
         ]));
+
         return back();
         // Job::create([
         //     'company_id' => $company->id,

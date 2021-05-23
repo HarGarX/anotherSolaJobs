@@ -53,3 +53,7 @@ Route::get('/logout', 'App\Http\Controllers\SessionsController@destroy')->name('
 Route::get('/search', function () {
     return view('Search_result');
 });
+
+// Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

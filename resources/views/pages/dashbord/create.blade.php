@@ -22,7 +22,7 @@
                                 <div class="w-11/12 p-12 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12">
                                     <h1 class="text-xl font-semibold">Hello there 👋, <span class="font-normal">please
                                             fill in your information to continue</span></h1>
-                                    <form class="mt-6" method="POST" action="/dashbord">
+                                    <form class="mt-6" method="POST" action="/dashbord" enctype="multipart/form-data">
                                        @include('global.form')
                                         <button type="submit"
                                             class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">

@@ -19,3 +19,9 @@
     class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
     required />
 
+
+<label for="logo" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">logo</label>
+<input id="logo" type="file" name="logo" 
+class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+    required />
+

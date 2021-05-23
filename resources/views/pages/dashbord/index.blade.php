@@ -29,6 +29,7 @@
 
                                 <tr class="text-left border-b border-gray-300">
                                     <th class="px-4 py-3">#</th>
+                                    <th class="px-4 py-3">Logo</th>
                                     <th class="px-4 py-3">Company name</th>
                                     <th class="px-4 py-3"> Company Email</th>
                                     <th class="px-4 py-3">state</th>
@@ -38,6 +39,10 @@
                                 @foreach ($companies as $company)
                                     <tr class="bg-gray-700 border-b border-gray-600">
                                         <td class="px-4 py-3">{{ $company->id }}</td>
+                                        <td class="px-4 py-3">
+                                            <img style="width: 195px;margin: 5px 5px 0;" src="{{$company->logo}}"alt="logo"
+                                            class="logo-default">
+                                        </td>
                                         <td class="px-4 py-3 text-blue-500"> <a
                                                 href="/dashbord/{{ $company->id }}">{{ $company->name }}</a></td>
                                         <td class="px-4 py-3">{{ $company->email }}</td>

@@ -26,7 +26,15 @@ class DashBordsController extends Controller
     public function store()
 
     {
-        Company::create($this->validateRequest());
+        $request = $this->validateRequest();
+
+        $company = Company::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'state' => $request['state'],
+        ]);
+
+        $company->addMedia($request['logo'])->toMediaCollection('logo');
 
         return redirect('/dashbord');
     }
@@ -47,9 +55,18 @@ class DashBordsController extends Controller
 
 
     public function update(Company $company)
-
     {
-        $company->update($this->validateRequest());
+        $request = $this->validateRequest();
+
+        $company->update([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'state' => $request['state'],
+        ]);
+            
+        if (!empty($request['logo'])) {
+            $company->addMedia($request['logo'])->toMediaCollection('logo');
+        }
 
         return redirect('/dashbord/' . $company->id);
     }
@@ -73,6 +90,7 @@ class DashBordsController extends Controller
             'name' => 'required|min:3',
             'email' => 'required|email',
             'state' => 'required',
+            'logo' => 'sometimes',
         ]);
     }
 }
